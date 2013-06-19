@@ -21,6 +21,9 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 KERNEL_IMG_CONF="/etc/kernel-img.conf"
 MANIFEST="/usr/share/kfreebsd-downloader/@VERSION@/MANIFEST.@ARCH@"
 
+#BASE_URL="http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE"
+BASE_URL="http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@VERSION@-RELEASE"
+
 case "$1" in
     configure)
 	cachedir="/var/cache/kfreebsd-downloader/@VERSION@-RELEASE"
@@ -28,8 +31,7 @@ case "$1" in
 
 	# Download
 	mkdir -p ${cachedir}
-	wget http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE/kernel.txz \
-		-c -O ${cachedir}/kernel.txz
+	wget ${BASE_URL}/kernel.txz -c -O ${cachedir}/kernel.txz
 
 	# Verify
 	grep "^kernel\.txz\s" ${MANIFEST} | (read file sum dummy; sha256sum ${cachedir}/kernel.txz | grep "^${sum}\s")

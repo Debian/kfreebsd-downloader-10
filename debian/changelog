@@ -1,6 +1,8 @@
 kfreebsd-downloader (9.0-4) UNRELEASED; urgency=low
 
   * Make it easier to upgrade by removing version number redundancy.
+  * Switch to people.debian.org URL for kernel.txz download.
+    (Closes: #712816)
 
  -- Robert Millan <rmh@debian.org>  Wed, 19 Jun 2013 15:39:55 +0200
 
