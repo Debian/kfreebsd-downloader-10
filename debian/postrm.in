@@ -23,7 +23,7 @@ KERNEL_IMG_CONF="/etc/kernel-img.conf"
 
 case "$1" in
     remove|purge|upgrade)
-	rm -rf /lib/modules/@RELEASE@ /boot/kfreebsd-@RELEASE@.gz
+	rm -rf /lib/modules/@VERSION@-RELEASE /boot/kfreebsd-@VERSION@-RELEASE.gz
 
 	case "$1" in purge)
 		rm -rf /var/cache/kfreebsd-downloader ;;

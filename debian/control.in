@@ -8,7 +8,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/glibc-bsd/trunk/kfreebsd-downloader/
 Vcs-Svn: svn://svn.debian.org/glibc-bsd/trunk/kfreebsd-downloader/
 Standards-Version: 3.9.2
 
-Package: kfreebsd-downloader-9.0
+Package: kfreebsd-downloader-@VERSION@
 Architecture: kfreebsd-i386 kfreebsd-amd64
 Depends: ${misc:Depends},
  freebsd-utils (>= 8.1-5), kldutils (>= 8.2+ds3-1),
@@ -22,7 +22,7 @@ Breaks:
  libc0.1 (<< 2.13-11),
 # Require ZFS v28 userland
  zfsutils (<< 8.3~),
-Provides: kfreebsd-image-9, kfreebsd-image
+Provides: kfreebsd-image-@MAJOR@, kfreebsd-image
 Description: kernel of FreeBSD (upstream version)
  This package automatically downloads the latest upstream version of the
  kernel of FreeBSD, and installs it on your system.
@@ -30,14 +30,14 @@ Description: kernel of FreeBSD (upstream version)
  Be warned that the upstream version of the kernel is NOT expected to work
  correctly on a Debian system. It is only provided for testing purposes.
 
-Package: kfreebsd-downloader-9
+Package: kfreebsd-downloader-@MAJOR@
 Architecture: kfreebsd-i386 kfreebsd-amd64
-Depends: ${misc:Depends}, kfreebsd-downloader-9.0
+Depends: ${misc:Depends}, kfreebsd-downloader-@VERSION@
 Description: kernel of FreeBSD (upstream version)
- This package depends on the latest downloader for kernel of FreeBSD 9.
+ This package depends on the latest downloader for kernel of FreeBSD @MAJOR@.
 
 Package: kfreebsd-downloader
 Architecture: kfreebsd-i386 kfreebsd-amd64
-Depends: ${misc:Depends}, kfreebsd-downloader-9
+Depends: ${misc:Depends}, kfreebsd-downloader-@MAJOR@
 Description: kernel of FreeBSD (upstream version)
  This package depends on the latest downloader for kernel of FreeBSD.
