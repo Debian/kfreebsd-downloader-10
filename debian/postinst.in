@@ -22,6 +22,7 @@ KERNEL_IMG_CONF="/etc/kernel-img.conf"
 MANIFEST="/usr/share/kfreebsd-downloader/@VERSION@/MANIFEST.@ARCH@"
 
 #BASE_URL="http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE"
+#BASE_URL="http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/@ARCH@/@ARCH@/@VERSION@-RELEASE"
 BASE_URL="http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@VERSION@-RELEASE"
 
 case "$1" in
