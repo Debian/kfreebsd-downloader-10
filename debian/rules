@@ -5,16 +5,23 @@
 
 DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
-MAJOR = 9
-VERSION = $(MAJOR).0
+full_version	:= $(shell dpkg-parsechangelog | grep ^Version: | sed -e 's/^.*: //g')
+version		:= $(shell echo $(full_version) | sed -e 's/[~+-].*//g')
+major           := $(shell echo $(version) | sed -e 's/\..*//g')
+
+fetch:
+	for arch in i386 amd64 ; do \
+		wget http://ftp.freebsd.org/pub/FreeBSD/releases/$$arch/$$arch/$(version)-RELEASE/MANIFEST \
+			-O MANIFEST.$$arch ; \
+	done
 
 %:
 	dh $@
 
 debian/%: debian/%.in debian/rules
 	sed \
-		-e "s/@MAJOR@/$(MAJOR)/g" \
-		-e "s/@VERSION@/$(VERSION)/g" \
+		-e "s/@MAJOR@/$(major)/g" \
+		-e "s/@VERSION@/$(version)/g" \
 		-e "s/@ARCH@/$(DEB_HOST_ARCH_CPU)/g" \
 	< $< > $@
 
