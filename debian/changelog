@@ -1,3 +1,9 @@
+kfreebsd-downloader (9.0-5) UNRELEASED; urgency=low
+
+  * postinst.in: Try all URLs until one succeeds.
+
+ -- Robert Millan <rmh@debian.org>  Mon, 01 Jul 2013 23:53:34 +0200
+
 kfreebsd-downloader (9.0-4) unstable; urgency=high
 
   * Make it easier to upgrade by removing version number redundancy.

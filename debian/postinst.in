@@ -21,10 +21,6 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 KERNEL_IMG_CONF="/etc/kernel-img.conf"
 MANIFEST="/usr/share/kfreebsd-downloader/@VERSION@/MANIFEST.@ARCH@"
 
-#BASE_URL="http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE"
-#BASE_URL="http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/@ARCH@/@ARCH@/@VERSION@-RELEASE"
-BASE_URL="http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@VERSION@-RELEASE"
-
 case "$1" in
     configure)
 	cachedir="/var/cache/kfreebsd-downloader/@VERSION@-RELEASE"
@@ -32,7 +28,18 @@ case "$1" in
 
 	# Download
 	mkdir -p ${cachedir}
-	wget ${BASE_URL}/kernel.txz -c -O ${cachedir}/kernel.txz
+	found=false
+	for base_url in \
+		http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE \
+		http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/@ARCH@/@ARCH@/@VERSION@-RELEASE \
+		http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@VERSION@-RELEASE \
+	; do
+		if wget ${base_url}/kernel.txz -c -O ${cachedir}/kernel.txz ; then
+			found=true
+			break
+		fi
+	done
+	${found}
 
 	# Verify
 	grep "^kernel\.txz\s" ${MANIFEST} | (read file sum dummy; sha256sum ${cachedir}/kernel.txz | grep "^${sum}\s")
