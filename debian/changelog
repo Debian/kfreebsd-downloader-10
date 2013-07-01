@@ -1,4 +1,7 @@
-kfreebsd-downloader (9.0-5) UNRELEASED; urgency=low
+kfreebsd-downloader (9.1-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+    - Bump grub Breaks due to #699002.
 
   * postinst.in: Try all URLs until one succeeds.
   * Lower grub Breaks version due to SPU upload.
