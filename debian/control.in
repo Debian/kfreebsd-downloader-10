@@ -15,8 +15,8 @@ Depends: ${misc:Depends},
  devd | freebsd-utils (<< 8.2+ds2-9),
  wget, xz-utils,
 Breaks:
-# grub-probe versions prior to ada(4) support break postinst
- grub-common (<< 1.98+20100804-14+squeeze1),
+# Prior versions can't boot kFreeBSD >= 9.1 (see #699002)
+ grub-common (<< 1.99-27+deb7u2) [kfreebsd-any],
 # AT_* macros break LD_PRELOAD (see #630695)
 # Missing support for RFTSIGZMB (see 007_clone_signals.diff)
  libc0.1 (<< 2.13-11),

@@ -1,6 +1,7 @@
 kfreebsd-downloader (9.0-5) UNRELEASED; urgency=low
 
   * postinst.in: Try all URLs until one succeeds.
+  * Lower grub Breaks version due to SPU upload.
 
  -- Robert Millan <rmh@debian.org>  Mon, 01 Jul 2013 23:53:34 +0200
 
