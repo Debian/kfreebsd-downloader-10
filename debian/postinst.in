@@ -19,20 +19,20 @@ set -e
 
 PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 KERNEL_IMG_CONF="/etc/kernel-img.conf"
-MANIFEST="/usr/share/kfreebsd-downloader/@VERSION@/MANIFEST.@ARCH@"
+MANIFEST="/usr/share/kfreebsd-downloader/@UPSTREAM_VERSION@/MANIFEST.@ARCH@"
 
 case "$1" in
     configure)
-	cachedir="/var/cache/kfreebsd-downloader/@VERSION@-RELEASE"
-	moduledir="/lib/modules/@VERSION@-RELEASE"
+	cachedir="/var/cache/kfreebsd-downloader/@UPSTREAM_VERSION@"
+	moduledir="/lib/modules/@UPSTREAM_VERSION@"
 
 	# Download
 	mkdir -p ${cachedir}
 	found=false
 	for base_url in \
-		http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@VERSION@-RELEASE \
-		http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/@ARCH@/@ARCH@/@VERSION@-RELEASE \
-		http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@VERSION@-RELEASE \
+		http://ftp.freebsd.org/pub/FreeBSD/releases/@ARCH@/@ARCH@/@UPSTREAM_VERSION@ \
+		http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/@ARCH@/@ARCH@/@UPSTREAM_VERSION@ \
+		http://people.debian.org/~rmh/kfreebsd-downloader/@ARCH@/@UPSTREAM_VERSION@ \
 	; do
 		if wget ${base_url}/kernel.txz -c -O ${cachedir}/kernel.txz ; then
 			found=true
@@ -47,12 +47,12 @@ case "$1" in
 	# Unpack
 	rm -rf ${moduledir}
 	mkdir -p ${moduledir}
-	echo "Unpacking kFreeBSD @VERSION@-RELEASE ..." >&2
+	echo "Unpacking kFreeBSD @UPSTREAM_VERSION@ ..." >&2
 	tar --strip-components=3 -C ${moduledir} -xJf ${cachedir}/kernel.txz
 
 	# Install kernel image
-	gzip -9 < ${moduledir}/kernel > /boot/kfreebsd-@VERSION@-RELEASE.gz
-	rm -f ${moduledir}/@VERSION@-RELEASE/kernel
+	gzip -9 < ${moduledir}/kernel > /boot/kfreebsd-@UPSTREAM_VERSION@.gz
+	rm -f ${moduledir}/@UPSTREAM_VERSION@/kernel
 
 	########################################################################
 
