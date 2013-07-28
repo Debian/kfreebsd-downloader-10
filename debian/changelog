@@ -1,4 +1,4 @@
-kfreebsd-downloader (9.1-1) UNRELEASED; urgency=low
+kfreebsd-downloader (9.1-1) unstable; urgency=low
 
   * New upstream release.
     - Bump grub Breaks due to #699002.
@@ -7,7 +7,7 @@ kfreebsd-downloader (9.1-1) UNRELEASED; urgency=low
   * Lower grub Breaks version due to SPU upload.
   * Remove version redundancy and extract everything from changelog.
 
- -- Robert Millan <rmh@debian.org>  Mon, 01 Jul 2013 23:53:34 +0200
+ -- Robert Millan <rmh@debian.org>  Sun, 28 Jul 2013 18:36:33 +0200
 
 kfreebsd-downloader (9.0-4) unstable; urgency=high
 
