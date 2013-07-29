@@ -1,3 +1,10 @@
+kfreebsd-downloader (9.2~beta1+2) UNRELEASED; urgency=low
+
+  * Use a native version number for native packages. This is now enforced
+    by dpkg 1.17.0.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 29 Jul 2013 12:15:52 +0200
+
 kfreebsd-downloader (9.2~beta1-1) experimental; urgency=low
 
   * New upstream BETA release.
