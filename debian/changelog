@@ -1,4 +1,4 @@
-kfreebsd-downloader (9.2~beta2-1) UNRELEASED; urgency=low
+kfreebsd-downloader (9.2~beta2-1) experimental; urgency=low
 
   * New upstream BETA release.
 
