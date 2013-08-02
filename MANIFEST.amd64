@@ -1,7 +1,7 @@
-base.txz	cab3e83da7ef3d2169d40e8013b090fb807caa91d72f46e717ac9f9a7159b0fc	17573	base	"Base system (MANDATORY)"	on
-doc.txz	be23fe114314379eb5fc263c4f7d421c2ef9c13d61c230cbbb55538e5129818e	123	doc	"Additional documentation"	off
-games.txz	5c088e9b76772f24d1cec93258329a38d2fe9c6e9f3920c9e0c2cad2b90fb9f7	53	games	"Games (fortune, etc.)"	on
-kernel.txz	7e4cb3b2121ea8607a731f5e3602869f9ad4792f97f2fe984c00db3d576bd992	1326	kernel	"Kernel (MANDATORY)"	on
-lib32.txz	cb4d903f51b0e19541fbcf078e14c6776186e547f535fbb75ee35dae1adef03f	582	lib32	"32-bit compatibility libraries"	on
-ports.txz	0f569e3ef0551319fdd5cd9b9c589913b3d62fbec14488dfc84fc223b71bad51	155586	ports	"Ports tree"	on
-src.txz	aa313ab9718a29252771865bb7fd4a723d40c5dbc98c2a9903fee1cde48b2d14	58007	src	"System source code"	off
+base.txz	b40d122b52e17b6d6ddbb2cf64b4da79620099754a1daf30c14324a3ec9a6177	17574	base	"Base system (MANDATORY)"	on
+doc.txz	48b3b08c74f4f5e166c0c2a6ef4bf7883148922880593a3f246e4f0669fb24c3	123	doc	"Additional documentation"	off
+games.txz	b319d69998d3e5dc42371a2e0073808b10a7e8772b6d2dca8e2ff95c1e09d712	53	games	"Games (fortune, etc.)"	on
+kernel.txz	db12dc189df0f50aea32e968454be7e1c9a0ffea01dd531895eb5d63cf87c4cf	1326	kernel	"Kernel (MANDATORY)"	on
+lib32.txz	069383307dc8f3ce75be865dc2ac568b38677e66c18beb4b3ebbab45ef08e429	582	lib32	"32-bit compatibility libraries"	on
+ports.txz	46edb5c08c552735315eeac1a69df96b7455986cd3d080fc3256226ca97c0c4e	152991	ports	"Ports tree"	on
+src.txz	7a12795981c9b57720451d643c1fb6ac3ddff96cbbde0f63abf4c9bd60e1ab0c	58008	src	"System source code"	off

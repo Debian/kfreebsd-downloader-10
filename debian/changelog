@@ -1,4 +1,6 @@
-kfreebsd-downloader (9.2~beta1-2) UNRELEASED; urgency=low
+kfreebsd-downloader (9.2~beta2-1) UNRELEASED; urgency=low
+
+  * New upstream BETA release.
 
   [ Guillem Jover ]
   * Switch to canonical Vcs URLs.
