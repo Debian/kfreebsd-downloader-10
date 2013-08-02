@@ -7,14 +7,24 @@ DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 full_version	:= $(shell dpkg-parsechangelog | grep ^Version: | sed -e 's/^.*: //g')
 upstream_version	:= $(shell echo $(full_version) | sed -e 's/~beta/-BETA/' -e 's/-[^-]*$$//g' -e 's/^[^-]*$$/&-RELEASE/')
+tar_version	:= $(shell echo $(full_version) | sed -e 's/-.*//g')
 version		:= $(shell echo $(full_version) | sed -e 's/[~+-].*//g')
 major           := $(shell echo $(version) | sed -e 's/\..*//g')
 
-fetch:
+ORIG_DIR	:= kfreebsd-downloader-$(tar_version)
+ORIG_TAR	:= kfreebsd-downloader_$(tar_version).orig.tar.gz
+
+get-orig-source:
+	rm -rf $(ORIG_DIR)
+	mkdir $(ORIG_DIR)
 	for arch in i386 amd64 ; do \
 		wget http://ftp.freebsd.org/pub/FreeBSD/releases/$$arch/$$arch/$(upstream_version)/MANIFEST \
-			-O MANIFEST.$$arch ; \
+			-O $(ORIG_DIR)/MANIFEST.$$arch ; \
 	done
+	tar --numeric-owner --owner 0 --group 0 -czf ../$(ORIG_TAR) $(ORIG_DIR)
+	rm -rf $(ORIG_DIR)
+
+fetch:
 
 %:
 	dh $@
