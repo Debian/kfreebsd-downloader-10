@@ -1,3 +1,9 @@
+kfreebsd-downloader (9.2~rc1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Millan <rmh@debian.org>  Tue, 06 Aug 2013 21:24:34 +0200
+
 kfreebsd-downloader (9.2~beta2-1) experimental; urgency=low
 
   * New upstream BETA release.

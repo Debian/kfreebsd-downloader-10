@@ -6,7 +6,7 @@
 DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 full_version	:= $(shell dpkg-parsechangelog | grep ^Version: | sed -e 's/^.*: //g')
-upstream_version	:= $(shell echo $(full_version) | sed -e 's/~beta/-BETA/' -e 's/-[^-]*$$//g' -e 's/^[^-]*$$/&-RELEASE/')
+upstream_version	:= $(shell echo $(full_version) | sed -e 's/~beta/-BETA/' -e 's/~rc/-RC/' -e 's/-[^-]*$$//g' -e 's/^[^-]*$$/&-RELEASE/')
 tar_version	:= $(shell echo $(full_version) | sed -e 's/-.*//g')
 version		:= $(shell echo $(full_version) | sed -e 's/[~+-].*//g')
 major           := $(shell echo $(version) | sed -e 's/\..*//g')
