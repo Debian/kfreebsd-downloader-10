@@ -1,11 +1,11 @@
-Source: kfreebsd-downloader
+Source: kfreebsd-downloader-@MAJOR@
 Section: contrib/kernel
 Priority: extra
 Maintainer: GNU/kFreeBSD Maintainers <debian-bsd@lists.debian.org>
 Uploaders: Robert Millan <rmh@debian.org>
 Build-Depends: debhelper (>= 8.0)
-Vcs-Browser: http://anonscm.debian.org/viewvc/glibc-bsd/trunk/kfreebsd-downloader/
-Vcs-Svn: svn://anonscm.debian.org/glibc-bsd/trunk/kfreebsd-downloader/
+Vcs-Browser: http://anonscm.debian.org/viewvc/glibc-bsd/trunk/kfreebsd-downloader-@MAJOR@/
+Vcs-Svn: svn://anonscm.debian.org/glibc-bsd/trunk/kfreebsd-downloader-@MAJOR@/
 Standards-Version: 3.9.2
 
 Package: kfreebsd-downloader-@VERSION@
@@ -35,9 +35,3 @@ Architecture: kfreebsd-i386 kfreebsd-amd64
 Depends: ${misc:Depends}, kfreebsd-downloader-@VERSION@
 Description: kernel of FreeBSD (upstream version)
  This package depends on the latest downloader for kernel of FreeBSD @MAJOR@.
-
-Package: kfreebsd-downloader
-Architecture: kfreebsd-i386 kfreebsd-amd64
-Depends: ${misc:Depends}, kfreebsd-downloader-@MAJOR@
-Description: kernel of FreeBSD (upstream version)
- This package depends on the latest downloader for kernel of FreeBSD.

@@ -6,13 +6,13 @@
 DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 full_version	:= $(shell dpkg-parsechangelog | grep ^Version: | sed -e 's/^.*: //g')
-upstream_version	:= $(shell echo $(full_version) | sed -e 's/~beta/-BETA/' -e 's/~rc/-RC/' -e 's/-[^-]*$$//g' -e 's/^[^-]*$$/&-RELEASE/')
+upstream_version	:= $(shell echo $(full_version) | sed -e 's/~alpha/-ALPHA/' -e 's/~beta/-BETA/' -e 's/~rc/-RC/' -e 's/-[^-]*$$//g' -e 's/^[^-]*$$/&-RELEASE/')
 tar_version	:= $(shell echo $(full_version) | sed -e 's/-.*//g')
 version		:= $(shell echo $(full_version) | sed -e 's/[~+-].*//g')
 major           := $(shell echo $(version) | sed -e 's/\..*//g')
 
-ORIG_DIR	:= kfreebsd-downloader-$(tar_version)
-ORIG_TAR	:= kfreebsd-downloader_$(tar_version).orig.tar.gz
+ORIG_DIR	:= kfreebsd-downloader-$(major)-$(tar_version)
+ORIG_TAR	:= kfreebsd-downloader-$(major)_$(tar_version).orig.tar.gz
 
 get-orig-source:
 	rm -rf $(ORIG_DIR)
