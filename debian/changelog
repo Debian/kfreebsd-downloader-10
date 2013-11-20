@@ -1,3 +1,9 @@
+kfreebsd-downloader-10 (10.0~beta3-1) experimental; urgency=low
+
+  * New upstream BETA release.
+
+ -- Robert Millan <rmh@debian.org>  Tue, 19 Nov 2013 23:16:00 +0100
+
 kfreebsd-downloader-10 (10.0~beta2-1) experimental; urgency=low
 
   * New upstream BETA release.
