@@ -24,14 +24,11 @@ Breaks:
  zfsutils (<< 8.3~),
 Provides: kfreebsd-image-@MAJOR@, kfreebsd-image
 Description: kernel of FreeBSD (upstream version)
- This package automatically downloads the latest upstream version of the
- kernel of FreeBSD, and installs it on your system.
- .
- Be warned that the upstream version of the kernel is NOT expected to work
- correctly on a Debian system. It is only provided for testing purposes.
+ This package automatically downloads the kernel of FreeBSD @VERSION@,
+ and installs it on your system.
 
 Package: kfreebsd-downloader-@MAJOR@
 Architecture: kfreebsd-i386 kfreebsd-amd64
 Depends: ${misc:Depends}, kfreebsd-downloader-@VERSION@
-Description: kernel of FreeBSD (upstream version)
+Description: kernel of FreeBSD (meta-package)
  This package depends on the latest downloader for kernel of FreeBSD @MAJOR@.
