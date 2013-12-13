@@ -1,8 +1,9 @@
-kfreebsd-downloader-10 (10.0~beta3-2) UNRELEASED; urgency=low
+kfreebsd-downloader-10 (10.0~rc1-1) unstable; urgency=low
 
+  * New upstream release candidate.
   * Make Description a bit less scary.
 
- -- Robert Millan <rmh@debian.org>  Mon, 09 Dec 2013 00:11:46 +0100
+ -- Robert Millan <rmh@debian.org>  Fri, 13 Dec 2013 13:58:16 +0100
 
 kfreebsd-downloader-10 (10.0~beta3-1) experimental; urgency=low
 
