@@ -1,3 +1,10 @@
+kfreebsd-downloader-10 (10.0~rc2-1) unstable; urgency=low
+
+  * New upstream release candidate.
+    - Includes radeonkms modesetting sysctls (see #731144).
+
+ -- Robert Millan <rmh@debian.org>  Mon, 16 Dec 2013 11:35:27 +0100
+
 kfreebsd-downloader-10 (10.0~rc1-1) unstable; urgency=low
 
   * New upstream release candidate.
