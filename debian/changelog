@@ -1,3 +1,9 @@
+kfreebsd-downloader-10 (10.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Millan <rmh@debian.org>  Mon, 20 Jan 2014 16:27:01 +0100
+
 kfreebsd-downloader-10 (10.0~rc5-1) unstable; urgency=low
 
   * New upstream release candidate.
