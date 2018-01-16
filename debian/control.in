@@ -4,9 +4,9 @@ Priority: extra
 Maintainer: GNU/kFreeBSD Maintainers <debian-bsd@lists.debian.org>
 Uploaders: Robert Millan <rmh@debian.org>
 Build-Depends: debhelper (>= 8.0)
-Vcs-Browser: http://anonscm.debian.org/viewvc/glibc-bsd/trunk/kfreebsd-downloader-@MAJOR@/
-Vcs-Svn: svn://anonscm.debian.org/glibc-bsd/trunk/kfreebsd-downloader-@MAJOR@/
 Standards-Version: 3.9.2
+Vcs-Browser: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@MAJOR@
+Vcs-Git: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@MAJOR@.git
 
 Package: kfreebsd-downloader-@VERSION@
 Architecture: kfreebsd-i386 kfreebsd-amd64
