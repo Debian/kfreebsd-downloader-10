@@ -14,6 +14,11 @@ major           := $(shell echo $(version) | sed -e 's/\..*//g')
 ORIG_DIR	:= kfreebsd-downloader-$(major)-$(tar_version)
 ORIG_TAR	:= kfreebsd-downloader-$(major)_$(tar_version).orig.tar.gz
 
+control: clean
+	sed -e "s/@major@/$(major)/g" -e "s/@version@/$(version)/g" \
+		$(CURDIR)/debian/control.in > $(CURDIR)/debian/control
+	echo >> $(CURDIR)/debian/control
+
 get-orig-source:
 	rm -rf $(ORIG_DIR)
 	mkdir $(ORIG_DIR)

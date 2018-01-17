@@ -1,14 +1,14 @@
-Source: kfreebsd-downloader-@MAJOR@
+Source: kfreebsd-downloader-@major@
 Section: contrib/kernel
 Priority: extra
 Maintainer: GNU/kFreeBSD Maintainers <debian-bsd@lists.debian.org>
 Uploaders: Robert Millan <rmh@debian.org>
 Build-Depends: debhelper (>= 8.0)
 Standards-Version: 3.9.2
-Vcs-Browser: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@MAJOR@
-Vcs-Git: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@MAJOR@.git
+Vcs-Browser: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@major@
+Vcs-Git: https://salsa.debian.org/kfreebsd-team/kfreebsd-downloader-@major@.git
 
-Package: kfreebsd-downloader-@VERSION@
+Package: kfreebsd-downloader-@version@
 Architecture: kfreebsd-i386 kfreebsd-amd64
 Depends: ${misc:Depends},
  freebsd-utils (>= 8.1-5), kldutils (>= 8.2+ds3-1),
@@ -22,13 +22,13 @@ Breaks:
  libc0.1 (<< 2.13-11),
 # Require ZFS v28 userland
  zfsutils (<< 8.3~),
-Provides: kfreebsd-image-@MAJOR@, kfreebsd-image
+Provides: kfreebsd-image-@major@, kfreebsd-image
 Description: kernel of FreeBSD (upstream version)
- This package automatically downloads the kernel of FreeBSD @VERSION@,
+ This package automatically downloads the kernel of FreeBSD @version@,
  and installs it on your system.
 
-Package: kfreebsd-downloader-@MAJOR@
+Package: kfreebsd-downloader-@major@
 Architecture: kfreebsd-i386 kfreebsd-amd64
-Depends: ${misc:Depends}, kfreebsd-downloader-@VERSION@
+Depends: ${misc:Depends}, kfreebsd-downloader-@version@
 Description: kernel of FreeBSD (meta-package)
- This package depends on the latest downloader for kernel of FreeBSD @MAJOR@.
+ This package depends on the latest downloader for kernel of FreeBSD @major@.
